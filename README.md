@@ -1,7 +1,7 @@
 # ADA_SentimentAnalysis
 Notebook for the course Advanced Data Analytics
 
-The goal of this project is to compare two different models and their performance when tasked with labeling a movie review as positive or negative. Both models where trained using the imdb review dataset.
+The goal of this project is to compare two different models and their performance when tasked with labeling a movie review as positive or negative. Both models were trained using the imdb review dataset.
 
 **The dataset**: The imdb reviews is a balanced dataset which includes a total of 50.000 reviews labeled as positive or negative.
 
@@ -55,9 +55,18 @@ _For the purpose of context awareness, words that do not show up at least 2 time
   * Output layer: One neuron using sigmoid activation function which will map the probability of a review being a certain class.
 ![image](Images/Modelayers.png)
 
-_Comparing the plots below we can see that when approaching the 8th epoch, validation accuracy decreases dramatically while accuracy increases which translates into overfitting!_
+_Comparing the plots below we can see that when approaching the 8th epoch, validation accuracy decreases dramatically while accuracy increases which indicates overfitting!_
 
 ![image](Images/epoch_val_acc.png)
 ![image](Images/epoch_accuracy.png)
 
 _Thus stopping the training in the 4th epoch_
+
+## Performance
+_Based on the last sample_
+| Model                | Accuracy | Precision | Recall | F1-score |
+|----------------------|----------|-----------|--------|----------|
+| TF-IDF + Naïve Bayes | 86%      | 86%       | 86%    | 86%      |
+| Word2Vec + LSTM      | 88%      | 88%       | 88%    | 88%      |
+
+_The per-class metrics differ on different runs but since the dataset is large and balanced the results converge on this values_
